@@ -1,0 +1,37 @@
+Arguments: 
+  /home/nut/.npm-global/bin/node /usr/share/yarn/bin/yarn.js add graphql apollo-server-express express mongoose
+
+PATH: 
+  /home/nut/google-cloud-sdk/bin:/usr/local/bin/robomongo/bin:/home/nut/.npm-global/bin:/home/nut/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.1
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "graphql-demo",
+    "version": "1.0.0",
+    "description": "GraphQL Demo",
+    "main": "index.js",
+    "author": "PNNutkung <pipatpol.t@ku.th>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/content-type: ETIMEDOUT
+      at Timeout._onTimeout (/usr/share/yarn/lib/cli.js:123749:19)
+      at ontimeout (timers.js:475:11)
+      at tryOnTimeout (timers.js:310:5)
+      at Timer.listOnTimeout (timers.js:270:5)
