@@ -1,5 +1,7 @@
-import Team from '../team'
 import { makeExecutableSchema } from 'graphql-tools'
+import QueryTypeDefs from './graphql.query'
+import MutationTypeDefs from './graphql.mutation'
+import Team from '../team'
 
 const SchemaDefinition = `
     schema {
@@ -20,7 +22,9 @@ const GraphQLResolver = {
 export default makeExecutableSchema({
     typeDefs: [
         SchemaDefinition,
-        Team.TypeDefs
+        Team.TypeDefs,
+        QueryTypeDefs,
+        MutationTypeDefs
     ],
     resolvers: GraphQLResolver
 })

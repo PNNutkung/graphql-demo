@@ -6,7 +6,7 @@ import GraphQLSchema from './models'
 const PORT = 3000
 const app = express()
 
-app.use('/graphql', bodyParser.json(), graphiqlExpress({ schema: GraphQLSchema }))
+app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: GraphQLSchema }))
 app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
 app.listen(PORT)
