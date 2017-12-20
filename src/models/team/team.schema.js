@@ -6,7 +6,7 @@ const TeamSchema = new Schema({
         unique: true,
         required: true
     },
-    member: [{
+    members: [{
         type: Schema.ObjectId,
         ref: 'Member'
     }]

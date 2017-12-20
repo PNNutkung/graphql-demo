@@ -9,35 +9,55 @@ export default class Team {
         return TeamModel
     }
 
-    static create (data) {
-        const team = new TeamModel(data)
+    static async create (data) {
         try {
-            const newTeam = team.save()
+            const team = await new TeamModel(data)
+            const newTeam = await team.save()
             return {
                 success: true,
                 team: newTeam,
                 message: 'Create new team successfully.'
             }
         } catch (err) {
-            console.log(err)
-            return {
-                success: false,
-                team: null,
-                message: 'Create team failed.',
-                errorMessage: err
+            switch (err.code) {
+            case 11000:
+                return {
+                    success: false,
+                    team: null,
+                    message: 'This team name already in use.',
+                    errorMessage: err
+                }
+            default:
+                return {
+                    success: false,
+                    team: null,
+                    message: 'Create team failed.',
+                    errorMessage: err
+                }
             }
         }
     }
 
-    static findById (_id) {
-        return prepare(TeamModel.findById(_id))
+    static async findById (_id) {
+        return prepare(await TeamModel.findById(_id))
     }
 
-    static findAll () {
-        return (TeamModel.find({})).map(prepare)
+    static async findAll () {
+        return (await TeamModel.find({})).map(prepare)
     }
 
-    static update (teamId, updateData) {
+    static async update (teamId, updateData) {
         return TeamModel.findByIdAndUpdate(teamId, updateData, { new: true })
+    }
+
+    static async addMemberToTeam (memberId, teamId) {
+        await TeamModel.update({
+            _id: teamId
+        },
+        {
+            $addToSet: {
+                members: memberId
+            }
+        })
     }
 }

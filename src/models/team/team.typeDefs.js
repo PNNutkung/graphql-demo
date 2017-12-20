@@ -1,7 +1,7 @@
 const typeDefs = `
     input TeamInput {
         name: String
-        member: [String]
+        members: [String]
     }
     type TeamWithMessage {
         message: String
@@ -11,7 +11,7 @@ const typeDefs = `
     type Team {
         _id: String
         name: String
-        member: [Member]
+        members: [Member]
     }
 `
 

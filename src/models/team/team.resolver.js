@@ -1,27 +1,27 @@
-import {Team} from '.'
-import {Member} from '../member'
+import { TeamClass } from '.'
+import { MemberClass } from '../member'
 
 const resolvers = {
     Query: {
         team: (root, {_id}) => {
-            return Team.findById(_id)
+            return TeamClass.findById(_id)
         },
         teams: () => {
-            return Team.findAll()
+            return TeamClass.findAll()
         }
     },
     Resolver: {
-        member: ({member}, _args, {loaders}) => {
-            return Member.findById(member)
-            // return loader.memberLoader.loadMany(team)
+        members: ({members}, _args, {loader}) => {
+            return members.map(member => MemberClass.findById(member))
+            // return loader.memberLoader.loadMany(members)
         }
     },
     Mutation: {
         createTeam: (root, {input}) => {
-            return Team.create(input)
+            return TeamClass.create(input)
         },
         updateTeam: (root, {_id, input}) => {
-            return Team.update(_id, input)
+            return TeamClass.update(_id, input)
         }
     }
 }

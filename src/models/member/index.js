@@ -1,10 +1,8 @@
 import MemberClass from './member'
-import Resolver from './member.resolver'
-import TypeDefs from './member.typeDefs'
-const member = {
+import MemberResolver from './member.resolver'
+import MemberTypeDefs from './member.typeDefs'
+export {
     MemberClass,
-    Resolver,
-    TypeDefs
+    MemberResolver,
+    MemberTypeDefs
 }
-
-export default member

@@ -1,8 +1,8 @@
-import Member from '../../models/member'
-import Team from '../../models/team'
+import { MemberClass } from '../../models/member'
+import { TeamClass } from '../../models/team'
 import { loader } from './loader'
 
 export default {
-    memberLoader: loader(Member),
-    teamLoader: loader(Team)
+    memberLoader: loader(MemberClass),
+    teamLoader: loader(TeamClass)
 }

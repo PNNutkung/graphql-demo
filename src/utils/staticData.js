@@ -1,6 +1,7 @@
-import { Member, Team } from '../models'
+import { MemberClass } from '../models/member'
+import { TeamClass } from '../models/team'
 
-const team = () => {
+const team = async () => {
     const teams = [
         {
             name: 'AKB48'
@@ -35,13 +36,207 @@ const team = () => {
     ]
 
     teams.forEach(team => {
-        Team.TeamClass.create(team)
+        TeamClass.create(team)
     })
 }
 
-const member = () => {
-    const teams = Team.TeamClass.findAll()
-    const members = [
+const member = async () => {
+    const teamModel = await TeamClass.getModel()
+    try {
+        const bnk48 = await teamModel.findOne({ name: 'BNK48' })
+        const akb48 = await teamModel.findOne({ name: 'AKB48' })
+        const jkt48 = await teamModel.findOne({ name: 'JKT48' })
+        if (bnk48 && bnk48.members.length === 0) {
+            const members = [
+                {
+                    picture: 'http://stage48.net/wiki/images/3/38/CherprangAreekulBNK2017.jpg',
+                    romajiFirstName: 'Cherprang',
+                    romajilastName: 'Areekul',
+                    firstName: 'เฌอปราง',
+                    lastName: 'อารีย์กุล',
+                    nickname: 'Cherprang',
+                    bloodType: 'B',
+                    height: '160',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/6/69/JiradapaIntajakBNK2017.jpg',
+                    romajiFirstName: 'Jiradapa',
+                    romajilastName: 'Intajak',
+                    firstName: 'จิรดาภา',
+                    lastName: 'อินทจักร',
+                    nickname: 'Pupe',
+                    bloodType: 'B',
+                    height: '160',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/6/6d/JetsupaKruetangBNK2017.jpg',
+                    romajiFirstName: 'Jetsupa',
+                    romajilastName: 'Kruetang',
+                    firstName: 'เจตสุภา',
+                    lastName: 'เครือแตง',
+                    nickname: 'Jan',
+                    bloodType: 'O',
+                    height: '162',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/8/8c/MioriOhkuboBNK2017.jpg',
+                    romajiFirstName: 'Miori',
+                    romajilastName: 'Ohkubo',
+                    firstName: '美織',
+                    lastName: '大久保',
+                    nickname: 'Miiko',
+                    bloodType: 'O',
+                    height: '153',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/7/7d/WarattayaDeesomlertBNK2017.jpg',
+                    romajiFirstName: 'Warattaya',
+                    romajilastName: 'Deesomlert',
+                    firstName: 'วรัทยา',
+                    lastName: 'ดีสมเลิศ',
+                    nickname: 'Kaimook',
+                    bloodType: 'O',
+                    height: '153',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/2/28/JennisOprasertBNK2017.jpg',
+                    romajiFirstName: 'Jennis',
+                    romajilastName: 'Oprasert',
+                    firstName: 'เจนนิษฐ์',
+                    lastName: 'โอ่ประเสริฐ',
+                    nickname: 'Jennis',
+                    bloodType: 'O',
+                    height: '161',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/8/86/PraewaSuthamphongBNK2017.jpg',
+                    romajiFirstName: 'Praewa',
+                    romajilastName: 'Suthamphong',
+                    firstName: 'แพรวา',
+                    lastName: 'สุธรรมพงษ์',
+                    nickname: 'Music',
+                    bloodType: 'B',
+                    height: '164',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/6/64/PunsikornTiyakornBNK2017.jpg',
+                    romajiFirstName: 'Punsikorn',
+                    romajilastName: 'Tiyakorn',
+                    firstName: 'ปัญสิกรณ์',
+                    lastName: 'ติยะกร',
+                    nickname: 'Pun',
+                    bloodType: 'A',
+                    height: '166',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/2/2b/PatchananJiajirachoteBNK2017.jpg',
+                    romajiFirstName: 'Patchanan',
+                    romajilastName: 'Jiajirachote',
+                    firstName: 'พัศชนันท์',
+                    lastName: 'เจียจิรโชติ',
+                    nickname: 'Orn',
+                    bloodType: 'O',
+                    height: '164',
+                    generation: 1,
+                    team: bnk48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/4/4e/MinegishiMinamiK2017.jpg',
+                    romajiFirstName: 'Minami',
+                    romajilastName: 'Minegishi',
+                    firstName: 'みなみ',
+                    lastName: '峯岸',
+                    nickname: 'Miichan (みぃちゃん)',
+                    bloodType: 'B',
+                    height: '158',
+                    generation: 1,
+                    team: akb48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/d/d3/WatanabeMayuB2017.jpg',
+                    romajiFirstName: 'Mayu',
+                    romajilastName: 'Watanabe',
+                    firstName: '麻友',
+                    lastName: '渡辺',
+                    nickname: 'Mayuyu (まゆゆ)',
+                    bloodType: 'A',
+                    height: '156',
+                    generation: 3,
+                    team: akb48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/b/b9/KashiwagiYukiB2017.jpg',
+                    romajiFirstName: 'Yuki',
+                    romajilastName: 'Kashiwagi',
+                    firstName: '由紀',
+                    lastName: '柏木',
+                    nickname: 'Yukirin (ゆきりん)',
+                    bloodType: 'A',
+                    height: '164',
+                    generation: 3,
+                    team: akb48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/0/02/Della2016.jpg',
+                    romajiFirstName: 'Della',
+                    romajilastName: 'Delila',
+                    firstName: 'Della',
+                    lastName: 'Delila',
+                    nickname: 'Della',
+                    bloodType: 'O',
+                    height: '153',
+                    generation: 2,
+                    team: jkt48._id
+                },
+                {
+                    picture: 'http://stage48.net/wiki/images/8/82/Michelle2016.jpg',
+                    romajiFirstName: 'Michelle Christo ',
+                    romajilastName: 'Kusnadi',
+                    firstName: 'Michelle Christo ',
+                    lastName: 'Kusnadi',
+                    nickname: 'Michelle',
+                    bloodType: 'O',
+                    height: '152',
+                    generation: 3,
+                    team: jkt48._id
+                }
+            ]
 
-    ]
+            members.forEach(member => {
+                MemberClass.create(member)
+            })
+        } else {
+            console.log('Members have already created!')
+        }
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+const create = () => {
+    team()
+    setTimeout(() => {
+        member()
+    },
+    1500)
+}
+
+export default {
+    create: create
 }

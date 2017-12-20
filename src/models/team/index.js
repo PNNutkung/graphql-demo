@@ -1,10 +1,8 @@
 import TeamClass from './team'
-import Resolver from './team.resolver'
-import TypeDefs from './team.typeDefs'
-const team = {
+import TeamResolver from './team.resolver'
+import TeamTypeDefs from './team.typeDefs'
+export {
     TeamClass,
-    Resolver,
-    TypeDefs
+    TeamResolver,
+    TeamTypeDefs
 }
-
-export default team
