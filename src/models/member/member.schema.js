@@ -24,10 +24,6 @@ const MemberSchema = new Schema({
         type: String,
         required: true
     },
-    birthdate: {
-        type: Date,
-        required: true
-    },
     bloodType: {
         type: String,
         required: true

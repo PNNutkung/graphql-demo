@@ -1,7 +1,7 @@
 import {Member} from '.'
 import {Team} from '../team'
 
-export const resolvers = {
+const resolvers = {
     Query: {
         member: (root, { _id }) => {
             return Member.findById(_id)
@@ -11,8 +11,9 @@ export const resolvers = {
         }
     },
     Resolver: {
-        team: ({team}, _args, {loaders}) => {
+        team: ({team}, _args, {loader}) => {
             return Team.findById(team)
+            // return loader.teamLoader.load(team)
         }
     },
     Mutation: {
@@ -24,3 +25,5 @@ export const resolvers = {
         }
     }
 }
+
+export default resolvers

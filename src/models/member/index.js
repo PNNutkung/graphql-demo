@@ -1,8 +1,10 @@
-import Member from './member'
+import MemberClass from './member'
 import Resolver from './member.resolver'
 import TypeDefs from './member.typeDefs'
-export const team = {
-    Member,
+const member = {
+    MemberClass,
     Resolver,
     TypeDefs
 }
+
+export default member
