@@ -4,5 +4,6 @@ export const typeDefs = `
     }
     type Team {
         name: String
+        member: [Member]
     }
 `

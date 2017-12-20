@@ -23,7 +23,8 @@ export default class Team {
             return {
                 success: false,
                 team: null,
-                message: 'Team name has already choosen.'
+                message: 'Create team failed.',
+                errorMessage: err
             }
         }
     }

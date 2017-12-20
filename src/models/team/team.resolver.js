@@ -1,4 +1,5 @@
-import Team from '.'
+import {Team} from '.'
+import {Member} from '../member'
 
 export const resolvers = {
     Query: {
@@ -7,6 +8,11 @@ export const resolvers = {
         },
         teams: () => {
             return Team.findAll()
+        }
+    },
+    Resolver: {
+        member: ({member}, _args, {loaders}) => {
+            return Member.findById(member)
         }
     },
     Mutation: {

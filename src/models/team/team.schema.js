@@ -5,7 +5,11 @@ const TeamSchema = new Schema({
         type: String,
         unique: true,
         required: true
-    }
+    },
+    member: [{
+        type: Schema.ObjectId,
+        ref: 'Member'
+    }]
 })
 
 export default TeamSchema
