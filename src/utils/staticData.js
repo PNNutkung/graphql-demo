@@ -58,7 +58,8 @@ const member = async () => {
                     bloodType: 'B',
                     height: '160',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1996, 4, 2)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/6/69/JiradapaIntajakBNK2017.jpg',
@@ -70,7 +71,8 @@ const member = async () => {
                     bloodType: 'B',
                     height: '160',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1998, 0, 18)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/6/6d/JetsupaKruetangBNK2017.jpg',
@@ -82,7 +84,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '162',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1994, 3, 8)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/8/8c/MioriOhkuboBNK2017.jpg',
@@ -94,7 +97,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '153',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1998, 8, 30)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/7/7d/WarattayaDeesomlertBNK2017.jpg',
@@ -106,7 +110,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '153',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1997, 7, 27)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/2/28/JennisOprasertBNK2017.jpg',
@@ -118,7 +123,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '161',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(2000, 6, 4)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/8/86/PraewaSuthamphongBNK2017.jpg',
@@ -130,7 +136,8 @@ const member = async () => {
                     bloodType: 'B',
                     height: '164',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(2001, 1, 24)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/6/64/PunsikornTiyakornBNK2017.jpg',
@@ -142,7 +149,8 @@ const member = async () => {
                     bloodType: 'A',
                     height: '166',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(2000, 10, 9)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/2/2b/PatchananJiajirachoteBNK2017.jpg',
@@ -154,7 +162,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '164',
                     generation: 1,
-                    team: bnk48._id
+                    team: bnk48._id,
+                    birthDate: new Date(1997, 1, 3)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/4/4e/MinegishiMinamiK2017.jpg',
@@ -166,7 +175,8 @@ const member = async () => {
                     bloodType: 'B',
                     height: '158',
                     generation: 1,
-                    team: akb48._id
+                    team: akb48._id,
+                    birthDate: new Date(1992, 10, 15)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/d/d3/WatanabeMayuB2017.jpg',
@@ -178,7 +188,8 @@ const member = async () => {
                     bloodType: 'A',
                     height: '156',
                     generation: 3,
-                    team: akb48._id
+                    team: akb48._id,
+                    birthDate: new Date(1994, 2, 26)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/b/b9/KashiwagiYukiB2017.jpg',
@@ -190,7 +201,8 @@ const member = async () => {
                     bloodType: 'A',
                     height: '164',
                     generation: 3,
-                    team: akb48._id
+                    team: akb48._id,
+                    birthDate: new Date(1991, 6, 15)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/0/02/Della2016.jpg',
@@ -202,7 +214,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '153',
                     generation: 2,
-                    team: jkt48._id
+                    team: jkt48._id,
+                    birthDate: new Date(1998, 10, 15)
                 },
                 {
                     picture: 'http://stage48.net/wiki/images/8/82/Michelle2016.jpg',
@@ -214,7 +227,8 @@ const member = async () => {
                     bloodType: 'O',
                     height: '152',
                     generation: 3,
-                    team: jkt48._id
+                    team: jkt48._id,
+                    birthDate: new Date(1999, 9, 28)
                 }
             ]
 
@@ -234,7 +248,7 @@ const create = () => {
     setTimeout(() => {
         member()
     },
-    1500)
+    1000)
 }
 
 export default {

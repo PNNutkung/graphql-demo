@@ -12,8 +12,8 @@ const resolvers = {
     },
     Resolver: {
         team: ({team}, _args, {loader}) => {
-            // return TeamClass.findById(team)
-            return loader.teamLoader.load(team)
+            return TeamClass.findById(team)
+            // return loader.teamLoader.load(team)
         }
     },
     Mutation: {

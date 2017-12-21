@@ -37,6 +37,9 @@ const MemberSchema = new Schema({
     team: {
         type: Schema.ObjectId,
         ref: 'Team'
+    },
+    birthDate: {
+        type: Date
     }
 })
 

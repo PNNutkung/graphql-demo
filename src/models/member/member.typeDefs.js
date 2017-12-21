@@ -15,6 +15,7 @@ const typeDefs = `
         height: Float
         generation: Int
         team: String
+        birthDate: DateTime
     }
     type Member {
         _id: String
@@ -28,6 +29,7 @@ const typeDefs = `
         height: Float
         generation: Int
         team: Team
+        birthDate: DateTime
     }
 `
 export default typeDefs
